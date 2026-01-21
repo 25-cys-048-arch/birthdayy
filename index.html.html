@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Madam J! ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0118;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+        .photo-box img {
+                 width: 40%;
+                 max-width: 150px;
+                 height: auto;
+                 border-radius: 15px;
+                 display: block;
+                 margin: 15px auto;
+                   }
+
+
+        section {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .heart-icon {
+            font-size: 60px;
+            color: #ff3366;
+            animation: pulse 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(to right, #ff99cc, #ff3366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(123, 47, 247, 0.4);
+        }
+
+        .letter-card {
+            background: (255, 255, 255, 0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .photo-box {
+            background:  ;
+            padding: 20px;
+            border-radius: 20px;
+            color: #333;
+        }
+
+        .photo-box img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <section id="step1">
+        <div class="heart-icon">❤️</div>
+        <h1>Preparing Something Special</h1>
+        <p>For someone very special...</p>
+        <button class="btn" onclick="nextStep('step2')">Let's See ✨</button>
+    </section>
+
+    <section id="step2" class="hidden">
+        <div style="font-size:60px;">🎂</div>
+        <h1>Happy Birthday<br>Madam J!</h1>
+        <p>It's your special day 💖</p>
+        <button class="btn" onclick="nextStep('step3')">Read My Letter ✉️</button>
+    </section>
+
+    <section id="step3" class="hidden">
+        <div class="letter-card">
+            <h3 style="text-align:center;color:#f107a3;">A Special Letter</h3>
+            <p>
+                My Dearest Madam J,<br><br>
+                On your birthday, I just want to remind you how special you are.
+                Your smile, your kindness, and your presence make everything better.
+                May this year bring you happiness, love, and success. 🌸
+            </p>
+            <div style="text-align:center;">
+                <button class="btn" onclick="nextStep('step4')">See Something More 💕</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW IMAGE PAGE -->
+    <section id="step4" class="hidden">
+        <div class="photo-box">
+            <h2 style="color:#f107a3;">My Favorite Picture of You 📸</h2>
+
+            <!-- ADD YOUR IMAGE HERE -->
+            <!-- Replace "herphoto.jpg" with your own image name -->
+            <img src="photoo.jpeg">
+
+            <p>
+                This picture reminds me how beautiful you are,
+                not just by looks but by heart as well.
+                Every time I see you, my world feels brighter. 💖
+            </p>
+
+            <button class="btn" onclick="location.reload()">Start Again 🔄</button>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function nextStep(stepId) {
+    document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+    document.getElementById(stepId).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
